@@ -6,8 +6,4 @@ COPY .env /app/.env
 COPY release.sh /app/release.sh
 COPY supervisord.conf /etc/supervisord.conf
 
-# Run the release command in build until Render supports lifecycle hooks
-# See: https://community.render.com/t/release-command-for-db-migrations/247
-RUN sh /app/release.sh
-
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+CMD ["sh", "start.sh"]
