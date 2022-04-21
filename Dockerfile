@@ -1,4 +1,4 @@
-FROM ghcr.io/fief-dev/fief:0.12.11
+FROM ghcr.io/fief-dev/fief:0.12.12
 
 WORKDIR /app
 
