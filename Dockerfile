@@ -8,7 +8,8 @@ COPY supervisord.conf /etc/supervisord.conf
 
 # Tweak to enable SSH access
 # See: https://render.com/docs/ssh#limitations
-RUN passwd -u root && \
+RUN apk add --no-cache --upgrade grep && \
+    passwd -u root && \
     mkdir ~/.ssh
 
 CMD ["sh", "start.sh"]
