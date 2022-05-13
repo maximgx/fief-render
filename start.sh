@@ -7,4 +7,4 @@ set -e
 fief migrate
 fief workspaces migrate
 
-/usr/bin/supervisord -c /etc/supervisord.conf
+supervisord -c /etc/supervisord.conf
