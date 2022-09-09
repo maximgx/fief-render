@@ -2,7 +2,6 @@ FROM ghcr.io/fief-dev/fief:0.16.9
 
 WORKDIR /app
 
-COPY .env /app/.env
 COPY start.sh /app/start.sh
 COPY supervisord.conf /etc/supervisord.conf
 
