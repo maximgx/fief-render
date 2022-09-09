@@ -1,6 +1,7 @@
 services:
   - type: web
     name: fief-server
+    region: frankfurt
     env: docker
     healthCheckPath: /openapi.json
     envVars:
@@ -16,6 +17,7 @@ services:
           property: connectionString
   - type: worker
     name: fief-worker
+    region: frankfurt
     env: docker
     dockerCommand: fief run-worker -p 1 -t 1
     envVars:
@@ -31,12 +33,14 @@ services:
           property: connectionString
   - type: redis
     name: fief-redis
+    region: frankfurt
     ipAllowList: []
     plan: free
     maxmemoryPolicy: noeviction
 
 databases:
   - name: fief-db
+    region: frankfurt
     databaseName: fief
     plan: starter
     postgresMajorVersion: 14

@@ -1,0 +1,27 @@
+name: 'Update region branches'
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  update_region_branches:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        region: [oregon, frankfurt, ohio, singapore]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: 'Replace region'
+        shell: bash
+        run: |
+          sed 's/region: frankfurt/region: ${{ matrix.region }}/g' render.yaml > render.yaml
+      - name: 'Commit and push'
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: 'Update region (${{ matrix.region }})'
+          branch: region-${{ matrix.region }}
+          create_branch: true
