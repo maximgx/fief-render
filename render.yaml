@@ -5,12 +5,30 @@ services:
     healthCheckPath: /openapi.json
     envVars:
       - fromGroup: fief
+      - key: DATABASE_URL
+        fromDatabase:
+          name: fief-db
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: fief-redis
+          property: connectionString
   - type: worker
     name: fief-worker
     env: docker
     dockerCommand: fief run-worker -p 1 -t 1
     envVars:
       - fromGroup: fief
+      - key: DATABASE_URL
+        fromDatabase:
+          name: fief-db
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: fief-redis
+          property: connectionString
   - type: redis
     name: fief-redis
     ipAllowList: []
@@ -28,17 +46,8 @@ databases:
 envVarGroups:
   - name: fief
     envVars:
-      - key: DATABASE_URL
-        fromDatabase:
-          name: fief-db
-          property: connectionString
       - key: DATABASE_TYPE
         value: POSTGRESQL
-      - key: REDIS_URL
-        fromService:
-          type: redis
-          name: fief-redis
-          property: connectionString
       - key: ENVIRONMENT
         value: production
       - key: LOG_LEVEL
@@ -54,6 +63,7 @@ envVarGroups:
       - key: ALLOW_ORIGIN_REGEX
         sync: false
       - key: SECRET
+        generateValue: true
         sync: false
       - key: ENCRYPTION_KEY
         sync: false
@@ -64,8 +74,10 @@ envVarGroups:
       - key: FIEF_DOMAIN
         sync: false
       - key: FIEF_CLIENT_ID
+        generateValue: true
         sync: false
       - key: FIEF_CLIENT_SECRET
+        generateValue: true
         sync: false
       - key: FIEF_MAIN_USER_EMAIL
         sync: false
