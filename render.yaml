@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: fief-server
+    env: docker
+    healthCheckPath: /openapi.json
+    envVars:
+      - fromGroup: fief
+  - type: worker
+    name: fief-worker
+    env: docker
+    dockerCommand: fief run-worker -p 1 -t 1
+    envVars:
+      - fromGroup: fief
+  - type: redis
+    name: fief-redis
+    ipAllowList: []
+    plan: free
+    maxmemoryPolicy: noeviction
+
+databases:
+  - name: fief-db
+    databaseName: fief
+    plan: starter
+    postgresMajorVersion: 14
+    user: fief
+    ipAllowList: []
+
+envVarGroups:
+  - name: fief
+    envVars:
