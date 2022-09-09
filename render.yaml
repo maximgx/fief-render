@@ -64,7 +64,6 @@ envVarGroups:
         sync: false
       - key: SECRET
         generateValue: true
-        sync: false
       - key: ENCRYPTION_KEY
         sync: false
       - key: EMAIL_PROVIDER
@@ -75,10 +74,8 @@ envVarGroups:
         sync: false
       - key: FIEF_CLIENT_ID
         generateValue: true
-        sync: false
       - key: FIEF_CLIENT_SECRET
         generateValue: true
-        sync: false
       - key: FIEF_MAIN_USER_EMAIL
         sync: false
       - key: FIEF_MAIN_USER_PASSWORD
