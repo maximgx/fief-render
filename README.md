@@ -11,15 +11,13 @@
 * Official website: [https://www.fief.dev](https://www.fief.dev)
 * Documentation: [https://docs.fief.dev](https://docs.fief.dev)
 
-## Deploy on Render
+## Deploy to Render
 
 This is the blueprint to deploy your own Fief instance on [Render](https://render.com/). Click on the button below to get started!
 
 <p align="center">
-  <a href="https://render.com/deploy?repo=https://github.com/fief-dev/render"><img src="https://md-btn.deta.dev/button.svg?text=Deploy%20on%20Render&bg=4351e8&w=200&h=50" /></a>
+  <a href="https://render.com/deploy?repo=https://github.com/fief-dev/render/tree/region-frankfurt"><img src="https://render.com/images/deploy-to-render-button.svg" /></a>
 </p>
-
-You can read more information about the whole procedure in our [documentation](https://docs.fief.dev/self-hosting/deployment/render/).
 
 ## License
 
