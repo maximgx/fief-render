@@ -18,7 +18,7 @@ jobs:
       - name: 'Replace region'
         shell: bash
         run: |
-          sed 's/region: frankfurt/region: ${{ matrix.region }}/g' render.yaml > render.yaml
+          sed -i 's/region: frankfurt/region: ${{ matrix.region }}/g' render.yaml
       - name: 'Commit and push'
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
