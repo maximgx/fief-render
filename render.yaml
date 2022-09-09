@@ -28,3 +28,46 @@ databases:
 envVarGroups:
   - name: fief
     envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: fief-db
+          property: connectionString
+      - key: DATABASE_TYPE
+        value: POSTGRESQL
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: fief-redis
+          property: connectionString
+      - key: ENVIRONMENT
+        value: production
+      - key: LOG_LEVEL
+        value: INFO
+      - key: FORWARDED_ALLOW_IPS
+        value: '*'
+      - key: DATABASE_POOL_PRE_PING
+        value: True
+      - key: WEB_CONCURRENCY
+        value: 4
+      - key: ROOT_DOMAIN
+        sync: false
+      - key: ALLOW_ORIGIN_REGEX
+        sync: false
+      - key: SECRET
+        sync: false
+      - key: ENCRYPTION_KEY
+        sync: false
+      - key: EMAIL_PROVIDER
+        sync: false
+      - key: EMAIL_PROVIDER_PARAMS
+        sync: false
+      - key: FIEF_DOMAIN
+        sync: false
+      - key: FIEF_CLIENT_ID
+        sync: false
+      - key: FIEF_CLIENT_SECRET
+        sync: false
+      - key: FIEF_MAIN_USER_EMAIL
+        sync: false
+      - key: FIEF_MAIN_USER_PASSWORD
+        sync: false
