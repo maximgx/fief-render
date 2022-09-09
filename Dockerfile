@@ -1,3 +1,4 @@
+ARG FIEF_VERSION
 FROM ghcr.io/fief-dev/fief:${FIEF_VERSION}
 
 WORKDIR /app
