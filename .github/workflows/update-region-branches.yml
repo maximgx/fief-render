@@ -24,4 +24,5 @@ jobs:
         with:
           commit_message: 'Update region (${{ matrix.region }})'
           branch: region-${{ matrix.region }}
+          skip_checkout: false
           create_branch: true
