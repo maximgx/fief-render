@@ -26,4 +26,5 @@ jobs:
           commit_options: '--allow-empty'
           branch: region-${{ matrix.region }}
           push_options: '--force'
+          skip_dirty_check: true
           create_branch: true
