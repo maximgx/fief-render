@@ -24,4 +24,5 @@ jobs:
         with:
           commit_message: 'Update region (${{ matrix.region }})'
           branch: region-${{ matrix.region }}
+          push_options: '--force'
           create_branch: true
