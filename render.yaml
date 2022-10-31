@@ -42,7 +42,6 @@ databases:
   - name: fief-db
     region: frankfurt
     databaseName: fief
-    plan: starter
     postgresMajorVersion: 14
     user: fief
     ipAllowList: []
