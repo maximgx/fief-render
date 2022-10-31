@@ -60,15 +60,6 @@ envVarGroups:
         value: INFO
       - key: FORWARDED_ALLOW_IPS
         value: '*'
-      - key: DATABASE_POOL_PRE_PING
-        value: False
-        sync: false
-      - key: DATABASE_POOL_RECYCLE_SECONDS
-        value: 600
-        sync: false
-      - key: WEB_CONCURRENCY
-        value: 4
-        sync: false
       - key: ROOT_DOMAIN
         sync: false
       - key: ALLOW_ORIGIN_REGEX
