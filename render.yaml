@@ -19,7 +19,7 @@ services:
     name: fief-worker
     region: frankfurt
     env: docker
-    dockerCommand: fief run-worker -p 2 -t 2
+    dockerCommand: fief run-worker -p 1 -t 1
     envVars:
       - fromGroup: fief
       - key: DATABASE_URL
