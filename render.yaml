@@ -4,6 +4,7 @@ services:
     region: frankfurt
     env: docker
     healthCheckPath: /openapi.json
+    preDeployCommand: /app/pre-deploy.sh
     envVars:
       - fromGroup: fief
       - key: DATABASE_URL
