@@ -3,7 +3,7 @@ services:
     name: fief-server
     region: frankfurt
     env: docker
-    healthCheckPath: /openapi.json
+    healthCheckPath: /healthz
     preDeployCommand: sh /app/pre-deploy.sh
     envVars:
       - fromGroup: fief
@@ -36,14 +36,12 @@ services:
     name: fief-redis
     region: frankfurt
     ipAllowList: []
-    plan: free
     maxmemoryPolicy: noeviction
 
 databases:
   - name: fief-db
     region: frankfurt
     databaseName: fief
-    postgresMajorVersion: 14
     user: fief
     ipAllowList: []
 
@@ -51,7 +49,7 @@ envVarGroups:
   - name: fief
     envVars:
       - key: FIEF_VERSION
-        value: 0.24.7
+        value: 0.28.1
       - key: DATABASE_TYPE
         value: POSTGRESQL
       - key: ENVIRONMENT
@@ -60,8 +58,6 @@ envVarGroups:
         value: INFO
       - key: FORWARDED_ALLOW_IPS
         value: '*'
-      - key: ROOT_DOMAIN
-        sync: false
       - key: ALLOW_ORIGIN_REGEX
         sync: false
       - key: SECRET
