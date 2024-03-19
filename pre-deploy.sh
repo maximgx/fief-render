@@ -2,5 +2,5 @@
 
 set -e
 
-fief admin migrate
-fief admin workspaces migrate
+fief migrate
+fief workspaces migrate
