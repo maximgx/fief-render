@@ -49,7 +49,7 @@ envVarGroups:
   - name: fief
     envVars:
       - key: FIEF_VERSION
-        value: 0.28.1
+        value: 0.28.5
       - key: DATABASE_TYPE
         value: POSTGRESQL
       - key: ENVIRONMENT
