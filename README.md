@@ -25,7 +25,7 @@
 This is the blueprint to deploy your own Fief instance on [Render](https://render.com/). Click on the button below to get started!
 
 <p align="center">
-  <a href="https://render.com/deploy?repo=https://github.com/fief-dev/render/tree/region-frankfurt"><img src="https://render.com/images/deploy-to-render-button.svg" /></a>
+  <a href="https://render.com/deploy?repo=https://github.com/maximgx/fief-render/render/tree/main"><img src="https://render.com/images/deploy-to-render-button.svg" /></a>
 </p>
 
 ## License
